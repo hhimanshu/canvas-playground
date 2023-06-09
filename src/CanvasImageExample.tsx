@@ -7,8 +7,15 @@ import '@fontsource/fira-mono';
 type CanvasProps = {
   fSize: number;
   font: string;
+  bgColor: string;
+  fontColor: string;
 };
-const CanvasImageExample = ({ fSize, font }: CanvasProps) => {
+const CanvasImageExample = ({
+  fSize,
+  font,
+  bgColor,
+  fontColor,
+}: CanvasProps) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -16,7 +23,7 @@ const CanvasImageExample = ({ fSize, font }: CanvasProps) => {
     const context = canvas.getContext('2d');
 
     // Set up the drawing properties
-    context.fillStyle = 'blue';
+    context.fillStyle = bgColor;
     context.fillRect(50, 50, 980, 980); // Adjust the dimensions as needed
 
     // Draw text on the canvas
@@ -24,9 +31,9 @@ const CanvasImageExample = ({ fSize, font }: CanvasProps) => {
     // context.font = `${fSize}px Fira Mono`;
     // context.font = `${fSize}px Lato`;
     // context.font = `${fSize}px poppins`;
-    context.fillStyle = 'white';
+    context.fillStyle = fontColor;
     context.fillText('Sphinx of black quartz', 100, 150);
-  }, [fSize, font]);
+  }, [fSize, font, bgColor, fontColor]);
 
   const downloadImage = () => {
     const canvas = canvasRef.current;
