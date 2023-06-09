@@ -10,7 +10,7 @@ type CanvasProps = {
   bgColor: string;
   fontColor: string;
 };
-const CanvasImageExample = ({
+const CanvasImage = ({
   fSize,
   font,
   bgColor,
@@ -56,4 +56,4 @@ const CanvasImageExample = ({
   );
 };
 
-export default CanvasImageExample;
+export default CanvasImage;
